@@ -1,4 +1,7 @@
-#### Setup guide
+### Concept
+TODO
+
+### Setup guide
 1. Project setup
 * `python -m venv venv`
 * `source venv/bin/activate`
