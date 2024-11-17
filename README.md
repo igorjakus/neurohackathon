@@ -18,3 +18,8 @@ This project is a Brain-Computer Interface (BCI) system designed to detect and w
 
 you're ready to go :-)
 
+
+Dataset, paper:
+https://www.ukbonn.de/epileptologie/arbeitsgruppen/ag-lehnertz-neurophysik/downloads/
+
+
