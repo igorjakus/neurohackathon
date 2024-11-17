@@ -88,6 +88,6 @@ def send_email(subject, body_template, attachment_path=None):
     except Exception as e:
         print(f"Error during sending: {e}")
 
-
-send_email_risk()
-send_email_seizure()
+if __name__ == "__main__":
+    send_email_risk()
+    send_email_seizure()

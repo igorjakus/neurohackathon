@@ -54,9 +54,10 @@ class Connect():
         resampled_data = np.zeros((8, target_samples))
         for i in range(data.shape[0]):
             resampled_data[i] = resample(data[i], target_samples)
-
-connection = Connect()
-test = np.random(8,250)
+            
+if __name__ == "__main__":
+    connection = Connect()
+    test = np.random(8,250)
 
 
 
