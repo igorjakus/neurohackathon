@@ -8,11 +8,11 @@ class Model:
 
 
     def _load_model(self):
-        with open('../trained/svm_model.pkl', 'rb') as file:
+        with open('C:/Users/Hubert/Desktop/Projekty/neurohackaton/neurohackathon/trained/svm_model.pkl', 'rb') as file:
             self.svm = pickle.load(file)
     
     def _load_scaler(self):
-        with open('../trained/scaler.pkl', 'rb') as file:
+        with open('C:/Users/Hubert/Desktop/Projekty/neurohackaton/neurohackathon/trained/scaler.pkl', 'rb') as file:
             self.scaler = pickle.load(file)
 
     def predict(self, eeg_data: np.array) -> int:
