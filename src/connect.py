@@ -9,7 +9,7 @@ def plot_8_channels(data, timestamps):
     timestamps = np.arange(timestamps)
 
     # Create a figure with 8 subplots
-    fig, axes = plt.subplots(8, 1, figsize=(10, 15))
+    _, axes = plt.subplots(8, 1, figsize=(10, 15))
 
     # Plot each row of the array on a separate subplot
     for i in range(8):
