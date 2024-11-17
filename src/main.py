@@ -1,7 +1,7 @@
 import time
 from model import Model
 from connect import Connection
-from email import send_email_risk, send_email_seizure
+from sender import send_email_risk, send_email_seizure
 
 model = Model()
 connection = Connection()
