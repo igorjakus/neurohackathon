@@ -1,7 +1,6 @@
 import numpy as np
 import brainaccess_board as bb
 from time import sleep
-import mne
 import matplotlib.pyplot as plt
 from scipy.signal import resample
 
@@ -46,7 +45,7 @@ class Connect():
 
         #TO DO - downsampling z 250hz do 178hz
 
-        return data_last_1s
+        return self.downsample(data_last_1s)
     
     def downsample(data):
         # Downsample from 250 Hz to 178 Hz by averaging over appropriate windows

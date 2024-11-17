@@ -8,11 +8,18 @@ connection = Connection()
 
 while True:
     data = connection.get_data()
-    prediction = model.predict(data)
+    prediction_table = []
+    for vec in data:
+        prediction_table.push(model.predict(vec))
+    
+    print(prediction_table)
 
-    if prediction == 1:
-        send_email_risk()
-    elif prediction == 2:
-        send_email_seizure()
+    # if prediction == 1:
+    #     print("pwaw 0")
+    #     # send_email_risk()
+    # elif prediction == 2:
+    #     print("pwaw very very bad")
+
+        # send_email_seizure()
     
     time.sleep(5)
