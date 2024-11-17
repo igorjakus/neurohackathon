@@ -3,6 +3,7 @@ import brainaccess_board as bb
 from time import sleep
 import mne
 import matplotlib.pyplot as plt
+from scipy.signal import resample
 
 
 def plot_8_channels(data, timestamps):
@@ -47,22 +48,17 @@ class Connect():
 
         return data_last_1s
     
-    def downsample(data_channel):
+    def downsample(data):
         # Downsample from 250 Hz to 178 Hz by averaging over appropriate windows
-        data_new = np.zeros(178)
-        for i in range(178):
-            start_index = int(np.floor(i * 250 / 178))
-            end_index = int(np.floor((i + 1) * 250 / 178))
-            if end_index == start_index:
-                end_index = start_index + 1
-            if end_index > 250:
-                end_index = 250
-            data_window = data_channel[start_index:end_index]
-            data_new[i] = np.mean(data_window)
-        return data_new
+        target_samples = 178
+        resampled_data = np.zeros((8, target_samples))
+        for i in range(data.shape[0]):
+            resampled_data[i] = resample(data[i], target_samples)
+
+connection = Connect()
+test = np.random(8,250)
 
 
 
-# connection = Connect()
 # data = connection.get_data()
 # plot_8_channels(data, 1000)
