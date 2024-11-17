@@ -46,6 +46,21 @@ class Connect():
         #TO DO - downsampling z 250hz do 178hz
 
         return data_last_1s
+    
+    def downsample(data_channel):
+        # Downsample from 250 Hz to 178 Hz by averaging over appropriate windows
+        data_new = np.zeros(178)
+        for i in range(178):
+            start_index = int(np.floor(i * 250 / 178))
+            end_index = int(np.floor((i + 1) * 250 / 178))
+            if end_index == start_index:
+                end_index = start_index + 1
+            if end_index > 250:
+                end_index = 250
+            data_window = data_channel[start_index:end_index]
+            data_new[i] = np.mean(data_window)
+        return data_new
+
 
 
 # connection = Connect()
