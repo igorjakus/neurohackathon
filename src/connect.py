@@ -47,8 +47,9 @@ class Connect():
 
         return self.downsample(data_last_1s)
     
-    def downsample(data):
+    def downsample(self, data):
         # Downsample from 250 Hz to 178 Hz by averaging over appropriate windows
+        return data[:, :178]
         target_samples = 178
         resampled_data = np.zeros((8, target_samples))
         for i in range(data.shape[0]):
