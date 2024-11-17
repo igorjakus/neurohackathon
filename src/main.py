@@ -16,11 +16,8 @@ while True:
     print(data[0], prediction_table[0])
 
     # if prediction == 1:
-    #     print("pwaw 0")
-    #     # send_email_risk()
+    #     send_email_risk(data)
     # elif prediction == 2:
-    #     print("pwaw very very bad")
-
-        # send_email_seizure()
+    #     send_email_seizure(data)
     
     time.sleep(5)
