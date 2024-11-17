@@ -71,7 +71,8 @@ def send_email(subject, body_template, eeg_data):
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
     sender_email = "neurohackathon24@gmail.com"
-    sender_password = os.getenv("EMAIL_PASSWORD")
+    sender_password = "syyp fthw owcl zqjr"
+    # sender_password = os.getenv("EMAIL_PASSWORD")
 
     # create message
     message = MIMEMultipart()
