@@ -1,5 +1,7 @@
-### Concept
-TODO
+# BCI-Based Epileptic Seizure Detection and Warning System
+
+This project is a Brain-Computer Interface (BCI) system designed to detect and warn users of the potential risk of epileptic seizures. Using advanced signal processing techniques and machine learning algorithms, the system analyzes EEG (Electroencephalography) data to identify patterns associated with seizure onset. The goal is to provide timely alerts, enabling individuals with epilepsy and their relatives to take preventive measures and improve their quality of life.
+
 
 ### Setup guide
 1. Project setup
