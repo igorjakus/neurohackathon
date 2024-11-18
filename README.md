@@ -7,7 +7,7 @@ This project is a Brain-Computer Interface (BCI) system designed to detect and w
 - Achieved 98% accuracy with minimal false negatives.
 - Utilized SVM, with additional experiments using DNN, KNN, and KMeans models.
 
-#### (Dataset, paper)[https://www.ukbonn.de/epileptologie/arbeitsgruppen/ag-lehnertz-neurophysik/downloads/]
+#### [Dataset, paper](https://www.ukbonn.de/epileptologie/arbeitsgruppen/ag-lehnertz-neurophysik/downloads/)
 
 
 
