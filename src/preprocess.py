@@ -32,4 +32,13 @@ def preprocess_data(dataset: pd.DataFrame) -> np.array:
 
 
 def get_data() -> np.array:
+    """5 - eyes open, means when they were recording the EEG signal of the brain the patient had their eyes open
+
+    4 - eyes closed, means when they were recording the EEG signal the patient had their eyes closed
+
+    3 - Yes they identify where the region of the tumor was in the brain and recording the EEG activity from the healthy brain area
+
+    2 - They recorder the EEG from the area where the tumor was located
+
+    1 - Recording of seizure activity"""
     return preprocess_data(pd.read_csv("../data/Epileptic_Seizure_Recognition.csv",))
