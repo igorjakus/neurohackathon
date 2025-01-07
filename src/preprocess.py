@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 
-
 def preprocess_data(dataset: pd.DataFrame) -> np.array:
     def split_id(id) -> tuple:
         try:
@@ -14,6 +13,7 @@ def preprocess_data(dataset: pd.DataFrame) -> np.array:
         person = int(person)
         return person, time_stamp, idk
 
+    # Extract columns
     ids = dataset["Unnamed"]
     values = dataset.iloc[:, 1:179].to_numpy()  # Assuming values are numeric
     labels = dataset["y"]
@@ -31,15 +31,12 @@ def preprocess_data(dataset: pd.DataFrame) -> np.array:
     # Sort by person and time_stamp
     return np.sort(preprocessed, order=['person', 'time_stamp'])
 
-
 def get_data() -> np.array:
-    """5 - eyes open, means when they were recording the EEG signal of the brain the patient had their eyes open
-
+    """
+    5 - eyes open, means when they were recording the EEG signal of the brain the patient had their eyes open
     4 - eyes closed, means when they were recording the EEG signal the patient had their eyes closed
-
     3 - Yes they identify where the region of the tumor was in the brain and recording the EEG activity from the healthy brain area
-
     2 - They recorder the EEG from the area where the tumor was located
-
-    1 - Recording of seizure activity"""
-    return preprocess_data(pd.read_csv("../data/Epileptic_Seizure_Recognition.csv",))
+    1 - Recording of seizure activity
+    """
+    return preprocess_data(pd.read_csv("../data/Epileptic_Seizure_Recognition.csv"))
