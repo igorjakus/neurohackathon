@@ -1,6 +1,6 @@
-import numpy as np
 import brainaccess_board as bb
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy.signal import resample
 
 

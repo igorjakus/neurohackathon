@@ -1,12 +1,12 @@
 import os
 import smtplib
-import numpy as np
 from datetime import datetime, timedelta
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from email.mime.base import MIMEBase
 from email import encoders
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
+import numpy as np
 
 EEG_FILE_PATH = "data/last_eeg_read.csv"
 LAST_EMAIL_TIME = None

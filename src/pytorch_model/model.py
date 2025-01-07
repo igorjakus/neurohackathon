@@ -1,11 +1,9 @@
-import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.data import Dataset, DataLoader
 from sklearn.model_selection import train_test_split
-import csv
+from torch.utils.data import DataLoader, Dataset
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #DEVICE = "cpu"
@@ -72,12 +70,7 @@ class mlp_model(nn.Module):
 
 
 model = mlp_model(in_dim=IN_DIM, num_class=NUM_CLASSES)
-
-try:
-    model.load_state_dict(torch.load('saved_model.pth'))
-except:
-    pass
-
+model.load_state_dict(torch.load('saved_model.pth'))
 
 model = model.to(DEVICE)
 loss_fn = nn.CrossEntropyLoss()

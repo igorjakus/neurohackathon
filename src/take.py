@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 
+
 def takedata(path):
     zeros = pd.read_csv(path + 'dataset_0.csv')
     ones =  pd.read_csv(path + 'dataset_1.csv')

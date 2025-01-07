@@ -1,13 +1,4 @@
-import numpy as np
 import pandas as pd
-# import torch
-# import torch.nn as nn
-# import torch.optim as optim
-# from torch.utils.data import Dataset, DataLoader
-
-import csv
-
-
 
 df= pd.read_csv('C:/Users/Hubert/Desktop/Projekty/neurohackaton/neurohackathon/data/Epileptic_Seizure_Recognition.csv')
 
