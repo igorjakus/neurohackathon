@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 
+
 def preprocess_data(dataset: pd.DataFrame) -> np.array:
     def split_id(id) -> tuple:
         try:
