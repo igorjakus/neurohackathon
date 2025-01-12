@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from typing import Tuple
 
 
 def preprocess_data(dataset: pd.DataFrame) -> np.array:
@@ -32,12 +34,36 @@ def preprocess_data(dataset: pd.DataFrame) -> np.array:
     # Sort by person and time_stamp
     return np.sort(preprocessed, order=['person', 'time_stamp'])
 
-def get_data() -> np.array:
-    """
+
+def rename_labels(labels: np.array) -> np.array:
+    transformed_labels = np.zeros_like(labels)
+    
+    # Apply the transformation logic
+    transformed_labels[(labels == 1) | (labels == 2) | (labels == 3)] = 1  # seizure or risk
+    return transformed_labels # (labels == 4) | (labels == 5)                without risk
+
+    # y_binary = y.apply(lambda label: 1 if label in [1, 2, 3] else 0)
+
+def get_prepared_data() -> Tuple[np.array, np.array]:
+    """ Labels before renaming:
     5 - eyes open, means when they were recording the EEG signal of the brain the patient had their eyes open
     4 - eyes closed, means when they were recording the EEG signal the patient had their eyes closed
     3 - Yes they identify where the region of the tumor was in the brain and recording the EEG activity from the healthy brain area
     2 - They recorder the EEG from the area where the tumor was located
     1 - Recording of seizure activity
     """
-    return preprocess_data(pd.read_csv("../data/Epileptic_Seizure_Recognition.csv"))
+    # Get preprocessed data
+    data = preprocess_data(pd.read_csv("../data/Epileptic_Seizure_Recognition.csv"))
+    X = data["values"]
+    y = data["labels"]
+
+    # Rename labels as described in rename_labels function
+    y = rename_labels(data["labels"])
+
+    # Normalize the data
+    scaler = StandardScaler()
+
+    # Fit the scaler on the data
+    X = scaler.fit_transform(X)
+
+    return X, y
