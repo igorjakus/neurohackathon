@@ -39,8 +39,8 @@ def rename_labels(labels: np.array) -> np.array:
     transformed_labels = np.zeros_like(labels)
     
     # Apply the transformation logic
-    transformed_labels[(labels == 1) | (labels == 2) | (labels == 3)] = 1  # seizure or risk
-    return transformed_labels # (labels == 4) | (labels == 5)                without risk
+    transformed_labels[(labels == 1)] = 1  
+    return transformed_labels # all labels except 1 are marked as not having a seizure
 
     # y_binary = y.apply(lambda label: 1 if label in [1, 2, 3] else 0)
 
@@ -49,7 +49,7 @@ def get_prepared_data() -> Tuple[np.array, np.array]:
     5 - eyes open, means when they were recording the EEG signal of the brain the patient had their eyes open
     4 - eyes closed, means when they were recording the EEG signal the patient had their eyes closed
     3 - Yes they identify where the region of the tumor was in the brain and recording the EEG activity from the healthy brain area
-    2 - They recorder the EEG from the area where the tumor was located
+    2 - They recorded the EEG from the area where the tumor was located
     1 - Recording of seizure activity
     """
     # Get preprocessed data
