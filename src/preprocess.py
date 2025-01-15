@@ -1,8 +1,9 @@
+from typing import Tuple
+
 import numpy as np
 import pandas as pd
 from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import StandardScaler
-from typing import Tuple
 
 
 def preprocess_data(dataset: pd.DataFrame) -> np.array:
@@ -61,9 +62,11 @@ def get_prepared_data(oversample = False) -> Tuple[np.array, np.array]:
     # Rename labels as described in rename_labels function
     y = rename_labels(data["labels"])
 
+    # Oversample the data
     if oversample:
         sm = SMOTE(random_state=42)
         X,y = sm.fit_resample(X,y)
+
     # Normalize the data
     scaler = StandardScaler()
 
