@@ -61,8 +61,8 @@ def get_prepared_data(oversample = False, shuffle=False, relabel=True, standard_
     if standard_scaler and time_series_scaler:
         raise ValueError("Both standard_scaler and time_series_scaler cannot be True at the same time")
     
-    if time_series_reshape ^ time_series_scaler:
-        raise ValueError("Both time_series_reshape and time_series_scaler should be True or False at the same time")
+    # if time_series_reshape ^ time_series_scaler:
+    #     raise ValueError("Both time_series_reshape and time_series_scaler should be True or False at the same time")
  
     # Get preprocessed data
     data = preprocess_data(pd.read_csv("../data/Epileptic_Seizure_Recognition.csv"))
