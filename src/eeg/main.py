@@ -1,8 +1,9 @@
 import time
-from model import Model
-from connect import Connect
-import numpy as np
-from sender import send_email_risk, send_email_seizure
+
+from eeg.model import Model
+from src.eeg.connect import Connect
+
+# from sender import send_email_risk, send_email_seizure
 
 model = Model()
 connection = Connect()
