@@ -1,6 +1,6 @@
 import time
 
-from model import Model
+from eeg.model import Model
 from src.eeg.connect import Connect
 
 # from sender import send_email_risk, send_email_seizure
